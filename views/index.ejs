@@ -1,0 +1,350 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Msme</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous" />
+    <style>
+        .theme-color {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include ./component/banner %>
+        <%- include ./component/navbar %>
+
+            <!-- the main contents goes here -->
+            <div class="container">
+                <div class="mt-5">
+                    <div class="row">
+                        <!-- The form coloumn -->
+                        <div class="col-sm">
+                            <h4 class="text-center">Registration Form</h4>
+                            <form action="/register" method="POST">
+                                <div class="form-group">
+                                    <label for="name" class="form-text">
+                                        1. Name of Entrepreneur/Applicant / उद्यमी का नाम</label>
+                                    <input type="text" name="name" class="form-control" id="name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobileNo" class="form-text">2. Mobile No / मोबाइल नंबर +91-</label>
+                                    <input type="text" class="form-control" name="mobile" id="mobileNo" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email" class="form-text">3. Email ID / ईमेल</label>
+                                    <input type="email" name="email" required class="form-control" id="Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-text" for="gender">4. Gender / लिंग</label>
+                                    <select class="form-control" name="gender" id="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="others">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-text" for="enterpriseName">
+                                        5. Name of Enterprise/Business / उद्यम का नाम</label>
+                                    <input type="text" name="enterprise" required class="form-control" id="enterpriseName" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-text" for="organisation_type">
+                                        6. Type of Organisation / संगठन के प्रकार</label>
+                                    <select class="form-control" id="organisation_type" name="organisation_type" required>
+                                        <option value="">Select Type of Organisation</option>
+                                        <option value="Proprietorship Firm">Proprietorship Firm</option>
+                                        <option value="Hindu Undivided Family">Hindu Undivided Family</option>
+                                        <option value="Partnership Firm">Partnership Firm</option>
+                                        <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+                                        <option value="Co-operative Society">Co-operative Society</option>
+                                        <option value="Private Limited">Private Limited</option>
+                                        <option value="Public Limited">Public Limited</option>
+                                        <option value="Self Help Group">Self Help Group</option>
+                                        <option value="Society">Society</option>
+                                        <option value="Trust">Trust</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email" class="form-text"> 7. Office Address</label>
+                                    <textarea class="form-control" id="office_address" type="text" name="office_address" value="" required placeholder="Office Address"></textarea>
+                                    <input required class="form-control" id="office_district" name="office_district" type="text" placeholder="District" required=""
+                                        value="" maxlength="200" style="margin-top: 10px;" />
+                                    <input required class="form-control" id="office_pin" name="office_pin" type="text" placeholder="PIN /पिन" value="" required=""
+                                        maxlength="200" style="margin-top: 10px;" />
+                                    <select class="form-control" id="office_state" name="state" style="margin-top: 10px;" required="" data-fv-notempty-message="The state is required"
+                                        required>
+                                        <option value="" active>Select State</option>
+                                        <option value="ANDAMAN AND NICOBAR ISLANDS">ANDAMAN AND NICOBAR ISLANDS</option>
+                                        <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                                        <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                                        <option value="ASSAM">ASSAM</option>
+                                        <option value="BIHAR">BIHAR</option>
+                                        <option value="CHANDIGARH">CHANDIGARH</option>
+                                        <option value="CHHATISGARH">CHHATISGARH</option>
+                                        <option value="DADRA AND NAGAR HAVELI">DADRA AND NAGAR HAVELI</option>
+                                        <option value="DAMAN AND DIU">DAMAN AND DIU</option>
+                                        <option value="DELHI">DELHI</option>
+                                        <option value="GOA">GOA</option>
+                                        <option value="GUJARAT">GUJARAT</option>
+                                        <option value="HARYANA">HARYANA</option>
+                                        <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                                        <option value="JAMMU AND KASHMIR">JAMMU AND KASHMIR</option>
+                                        <option value="JHARKHAND">JHARKHAND</option>
+                                        <option value="KARNATAKA">KARNATAKA</option>
+                                        <option value="KERALA">KERALA</option>
+                                        <option value="LAKSHADWEEP">LAKSHADWEEP</option>
+                                        <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                                        <option value="MAHARASHTRA">MAHARASHTRA</option>
+                                        <option value="MANIPUR">MANIPUR</option>
+                                        <option value="MEGHALAYA">MEGHALAYA</option>
+                                        <option value="MIZORAM">MIZORAM</option>
+                                        <option value="NAGALAND">NAGALAND</option>
+                                        <option value="ODISHA">ODISHA</option>
+                                        <option value="PONDICHERRY">PONDICHERRY</option>
+                                        <option value="PUNJAB">PUNJAB</option>
+                                        <option value="RAJASTHAN">RAJASTHAN</option>
+                                        <option value="SIKKIM">SIKKIM</option>
+                                        <option value="TAMIL NADU">TAMIL NADU</option>
+                                        <option value="TELANGANA">TELANGANA</option>
+                                        <option value="TRIPURA">TRIPURA</option>
+                                        <option value="42UTTAR PRADESH0">UTTAR PRADESH</option>
+                                        <option value="UTTARAKHAND">UTTARAKHAND</option>
+                                        <option value="WEST BENGAL">WEST BENGAL</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-text">8. Main Business Activity of Enterprise / इकाई का प्रमुख गतिविधि
+                                    </label>
+                                    <select class="form-control" id="main_business_activity" name="main_business_activity" required>
+                                        <option value="">Select Activity of Enterprise</option>
+                                        <option value="Manufacturer">Manufacturer</option>
+                                        <option value="Service provider">Service provider</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="form-check-input ml-3" id="tems_and_cond_checkbox" name="tems_and_cond_checkbox" required />
+                                    <label class="ml-5" for="tems_and_cond_checkbox">I agree to Terms & Condition</label>
+                                </div>
+
+                                <small id="emailHelp" class="form-text text-muted m-4">We'll never share your details with anyone else.</small>
+
+                                <button type="submit" style="display: flex; justify-content: center; margin:auto" class="btn  btn-danger">
+                                    Pay and Register
+                                </button>
+                            </form>
+                        </div>
+                        <!-- The instruction coloumn -->
+                        <div class="col-sm">
+                            <div class="card">
+                                <h5 class="card-header" style="text-align: center;">
+                                    Instruction
+                                </h5>
+                                <div class="card-body">
+                                    <h3 style="text-align: center;">
+                                        For Immediate Support and Assistance, send us an email on beliveapplications@gmail.com
+                                    </h3>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>1. Name of Applicant :</strong> Fill name of Applicant as mentioned on the Aadhaar
+                                        Card.
+                                        <br /> "आधार कार्ड में उल्लिखित आवेदक का नाम भरें।"
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>2. Mobile No :</strong> Fill the correct Mobile Number of Applicant
+                                        <br /> "आवेदक का सही मोबाइल नंबर यहां लिखें। "
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>3. Mail ID :</strong> Fill the correct Mail ID of Applicant
+                                        <br />
+                                    </div>
+                                    "यहां अपनी सही ईमेल आईडी का उल्लेख करें।"
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>4. Gender :</strong> Select the gender from provided option
+                                        <br /> "आवेदक का लिंग चुनें।"
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>5. Name of Enterprise / Business :</strong> Fill the name of Business / Enterprise
+                                        which will get printed on MSME Certificate.
+                                        <br /> "यहां अपने व्यवसाय के नाम का उल्लेख करें। यह नाम MSME प्रमाणपत्र पर मुद्रित किया
+                                        जाएगा।"
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>6. Type of Organization :</strong> Select the type of organization from the given
+                                        options which will get printed on MSME Certificate.
+                                        <br /> "दिए गए विकल्पों में से संगठन के प्रकार का चयन करें।"
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>7. Office Address :</strong> Please provide office address.
+                                        <br /> "दिए गए क्षेत्रों में ठीक से आधिकारिक पता लिखे |"
+                                    </div>
+                                    <div class="blank-column"></div>
+                                    <div class="col-md-12 boxr-text">
+                                        <strong>8. Main Business Activity of Enterprise :</strong>
+                                        Select the Main Business activity from the given options.
+                                        <br /> "अपनी मुख्य व्यावसायिक गतिविधि चुनें।"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The  benifits card  container-->
+            <div class="container">
+                <div class="card" style="margin-top: 30px; margin-bottom: 20px;">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">
+                            Benifits of Udyog Aadhaar/ MSME/ SSI Registration
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Collateral Free Loans from Bank</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Protection against delay in payment</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Reservation policies to manufacturing sector</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Reduction in rate of Interest from banks</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Very easy to get Licenses, approvals</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>15% CLCSS subsidy
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Consideration on international trade fairs</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Waiver in Security Deposit in Government</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Octroi Benifits
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Concession in electricity bills</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Reimbursement of ISO Certification</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Exemption under Direct Tax Laws</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>1% exemption on interest rate on OD</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Bar Code registration subsidy</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i>Excise Exemption Scheme</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Subsidy on NSIC Performance and Credit ratings</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> 50% subsidy for patent registration</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="item">
+                                    <label for="">
+                                        <i class="fa fa-check-circle theme-color"></i> Eligible for IPS subsidy</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <%- include ./component/bottomnavbar %>
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>
