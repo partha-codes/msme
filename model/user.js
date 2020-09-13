@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
     office_address: {
         type: String,
         required: true,
-        maxlength: 50,
+        maxlength: 150,
         trim: true
     },
     office_district: {
