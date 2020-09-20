@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Partha Debnath",
   "homepage": "",
@@ -16,7 +16,9 @@
     "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-validator": "^6.6.1",
     "mongoose": "^5.10.3",
+    "nodemailer": "^6.4.11",
     "shortid": "^2.2.10"
   }
 }

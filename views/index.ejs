@@ -11,7 +11,7 @@
         crossorigin="anonymous" />
     <style>
         .theme-color {
-            color: green;
+            color: rgb(134, 177, 255);
         }
     </style>
 </head>
@@ -26,119 +26,135 @@
                     <div class="row">
                         <!-- The form coloumn -->
                         <div class="col-sm">
-                            <h4 class="text-center">Registration Form</h4>
-                            <form action="/register" method="POST">
-                                <div class="form-group">
-                                    <label for="name" class="form-text">
-                                        1. Name of Entrepreneur/Applicant / उद्यमी का नाम</label>
-                                    <input type="text" name="name" class="form-control" id="name" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="mobileNo" class="form-text">2. Mobile No / मोबाइल नंबर +91-</label>
-                                    <input type="text" class="form-control" name="mobile" id="mobileNo" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Email" class="form-text">3. Email ID / ईमेल</label>
-                                    <input type="email" name="email" required class="form-control" id="Email" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-text" for="gender">4. Gender / लिंग</label>
-                                    <select class="form-control" name="gender" id="gender" required>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="others">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-text" for="enterpriseName">
-                                        5. Name of Enterprise/Business / उद्यम का नाम</label>
-                                    <input type="text" name="enterprise" required class="form-control" id="enterpriseName" required />
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-text" for="organisation_type">
-                                        6. Type of Organisation / संगठन के प्रकार</label>
-                                    <select class="form-control" id="organisation_type" name="organisation_type" required>
-                                        <option value="">Select Type of Organisation</option>
-                                        <option value="Proprietorship Firm">Proprietorship Firm</option>
-                                        <option value="Hindu Undivided Family">Hindu Undivided Family</option>
-                                        <option value="Partnership Firm">Partnership Firm</option>
-                                        <option value="Limited Liability Partnership">Limited Liability Partnership</option>
-                                        <option value="Co-operative Society">Co-operative Society</option>
-                                        <option value="Private Limited">Private Limited</option>
-                                        <option value="Public Limited">Public Limited</option>
-                                        <option value="Self Help Group">Self Help Group</option>
-                                        <option value="Society">Society</option>
-                                        <option value="Trust">Trust</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Email" class="form-text"> 7. Office Address</label>
-                                    <textarea class="form-control" id="office_address" type="text" name="office_address" value="" required placeholder="Office Address"></textarea>
-                                    <input required class="form-control" id="office_district" name="office_district" type="text" placeholder="District" required=""
-                                        value="" maxlength="200" style="margin-top: 10px;" />
-                                    <input required class="form-control" id="office_pin" name="office_pin" type="text" placeholder="PIN /पिन" value="" required=""
-                                        maxlength="200" style="margin-top: 10px;" />
-                                    <select class="form-control" id="office_state" name="state" style="margin-top: 10px;" required="" data-fv-notempty-message="The state is required"
-                                        required>
-                                        <option value="" active>Select State</option>
-                                        <option value="ANDAMAN AND NICOBAR ISLANDS">ANDAMAN AND NICOBAR ISLANDS</option>
-                                        <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
-                                        <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
-                                        <option value="ASSAM">ASSAM</option>
-                                        <option value="BIHAR">BIHAR</option>
-                                        <option value="CHANDIGARH">CHANDIGARH</option>
-                                        <option value="CHHATISGARH">CHHATISGARH</option>
-                                        <option value="DADRA AND NAGAR HAVELI">DADRA AND NAGAR HAVELI</option>
-                                        <option value="DAMAN AND DIU">DAMAN AND DIU</option>
-                                        <option value="DELHI">DELHI</option>
-                                        <option value="GOA">GOA</option>
-                                        <option value="GUJARAT">GUJARAT</option>
-                                        <option value="HARYANA">HARYANA</option>
-                                        <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
-                                        <option value="JAMMU AND KASHMIR">JAMMU AND KASHMIR</option>
-                                        <option value="JHARKHAND">JHARKHAND</option>
-                                        <option value="KARNATAKA">KARNATAKA</option>
-                                        <option value="KERALA">KERALA</option>
-                                        <option value="LAKSHADWEEP">LAKSHADWEEP</option>
-                                        <option value="MADHYA PRADESH">MADHYA PRADESH</option>
-                                        <option value="MAHARASHTRA">MAHARASHTRA</option>
-                                        <option value="MANIPUR">MANIPUR</option>
-                                        <option value="MEGHALAYA">MEGHALAYA</option>
-                                        <option value="MIZORAM">MIZORAM</option>
-                                        <option value="NAGALAND">NAGALAND</option>
-                                        <option value="ODISHA">ODISHA</option>
-                                        <option value="PONDICHERRY">PONDICHERRY</option>
-                                        <option value="PUNJAB">PUNJAB</option>
-                                        <option value="RAJASTHAN">RAJASTHAN</option>
-                                        <option value="SIKKIM">SIKKIM</option>
-                                        <option value="TAMIL NADU">TAMIL NADU</option>
-                                        <option value="TELANGANA">TELANGANA</option>
-                                        <option value="TRIPURA">TRIPURA</option>
-                                        <option value="42UTTAR PRADESH0">UTTAR PRADESH</option>
-                                        <option value="UTTARAKHAND">UTTARAKHAND</option>
-                                        <option value="WEST BENGAL">WEST BENGAL</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-text">8. Main Business Activity of Enterprise / इकाई का प्रमुख गतिविधि
-                                    </label>
-                                    <select class="form-control" id="main_business_activity" name="main_business_activity" required>
-                                        <option value="">Select Activity of Enterprise</option>
-                                        <option value="Manufacturer">Manufacturer</option>
-                                        <option value="Service provider">Service provider</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" class="form-check-input ml-3" id="tems_and_cond_checkbox" name="tems_and_cond_checkbox" required />
-                                    <label class="ml-5" for="tems_and_cond_checkbox">I agree to Terms & Condition</label>
-                                </div>
+                            <div class="card">
+                                <h5 class="card-header text-center">
+                                    Registration Form
+                                </h5>
+                            </div>
+                            <div class="card-body " style="border: 1px solid rgb(0,0,0,0.3)">
+                                <% if (errmsg == null) { %>
+                                    <p></p>
+                                    <% } else { %>
+                                        <div class="alert alert-danger" role="alert">
+                                            User already exsits , Please check your details and try again!
+                                        </div>
+                                        <%}%>
+                                            <form action="/register" method="POST">
+                                                <div class="form-group">
+                                                    <label for="name" class="form-text">
+                                                        1. Name of Entrepreneur/Applicant / उद्यमी का नाम</label>
+                                                    <input type="text" name="name" class="form-control" id="name" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="mobileNo" class="form-text">2. Mobile No / मोबाइल नंबर +91-</label>
+                                                    <input type="text" class="form-control" name="mobile" id="mobileNo" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Email" class="form-text">3. Email ID / ईमेल</label>
+                                                    <input type="email" name="email" required class="form-control" id="Email" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-text" for="gender">4. Gender / लिंग</label>
+                                                    <select class="form-control" name="gender" id="gender" required>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                        <option value="others">Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-text" for="enterpriseName">
+                                                        5. Name of Enterprise/Business / उद्यम का नाम</label>
+                                                    <input type="text" name="enterprise" required class="form-control" id="enterpriseName" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-text" for="organisation_type">
+                                                        6. Type of Organisation / संगठन के प्रकार</label>
+                                                    <select class="form-control" id="organisation_type" name="organisation_type" required>
+                                                        <option value="">Select Type of Organisation</option>
+                                                        <option value="Proprietorship Firm">Proprietorship Firm</option>
+                                                        <option value="Hindu Undivided Family">Hindu Undivided Family</option>
+                                                        <option value="Partnership Firm">Partnership Firm</option>
+                                                        <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+                                                        <option value="Co-operative Society">Co-operative Society</option>
+                                                        <option value="Private Limited">Private Limited</option>
+                                                        <option value="Public Limited">Public Limited</option>
+                                                        <option value="Self Help Group">Self Help Group</option>
+                                                        <option value="Society">Society</option>
+                                                        <option value="Trust">Trust</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Email" class="form-text"> 7. Office Address</label>
+                                                    <textarea class="form-control" id="office_address" type="text" name="office_address" value="" required placeholder="Office Address"></textarea>
+                                                    <input required class="form-control" id="office_district" name="office_district" type="text" placeholder="District" required=""
+                                                        value="" maxlength="200" style="margin-top: 10px;" />
+                                                    <input required class="form-control" id="office_pin" name="office_pin" type="text" placeholder="PIN /पिन" value="" required=""
+                                                        maxlength="200" style="margin-top: 10px;" />
+                                                    <select class="form-control" id="office_state" name="state" style="margin-top: 10px;" required="" data-fv-notempty-message="The state is required"
+                                                        required>
+                                                        <option value="" active>Select State</option>
+                                                        <option value="ANDAMAN AND NICOBAR ISLANDS">ANDAMAN AND NICOBAR ISLANDS</option>
+                                                        <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                                                        <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                                                        <option value="ASSAM">ASSAM</option>
+                                                        <option value="BIHAR">BIHAR</option>
+                                                        <option value="CHANDIGARH">CHANDIGARH</option>
+                                                        <option value="CHHATISGARH">CHHATISGARH</option>
+                                                        <option value="DADRA AND NAGAR HAVELI">DADRA AND NAGAR HAVELI</option>
+                                                        <option value="DAMAN AND DIU">DAMAN AND DIU</option>
+                                                        <option value="DELHI">DELHI</option>
+                                                        <option value="GOA">GOA</option>
+                                                        <option value="GUJARAT">GUJARAT</option>
+                                                        <option value="HARYANA">HARYANA</option>
+                                                        <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                                                        <option value="JAMMU AND KASHMIR">JAMMU AND KASHMIR</option>
+                                                        <option value="JHARKHAND">JHARKHAND</option>
+                                                        <option value="KARNATAKA">KARNATAKA</option>
+                                                        <option value="KERALA">KERALA</option>
+                                                        <option value="LAKSHADWEEP">LAKSHADWEEP</option>
+                                                        <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                                                        <option value="MAHARASHTRA">MAHARASHTRA</option>
+                                                        <option value="MANIPUR">MANIPUR</option>
+                                                        <option value="MEGHALAYA">MEGHALAYA</option>
+                                                        <option value="MIZORAM">MIZORAM</option>
+                                                        <option value="NAGALAND">NAGALAND</option>
+                                                        <option value="ODISHA">ODISHA</option>
+                                                        <option value="PONDICHERRY">PONDICHERRY</option>
+                                                        <option value="PUNJAB">PUNJAB</option>
+                                                        <option value="RAJASTHAN">RAJASTHAN</option>
+                                                        <option value="SIKKIM">SIKKIM</option>
+                                                        <option value="TAMIL NADU">TAMIL NADU</option>
+                                                        <option value="TELANGANA">TELANGANA</option>
+                                                        <option value="TRIPURA">TRIPURA</option>
+                                                        <option value="42UTTAR PRADESH0">UTTAR PRADESH</option>
+                                                        <option value="UTTARAKHAND">UTTARAKHAND</option>
+                                                        <option value="WEST BENGAL">WEST BENGAL</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-text">8. Main Business Activity of Enterprise / इकाई का प्रमुख गतिविधि
+                                                    </label>
+                                                    <select class="form-control" id="main_business_activity" name="main_business_activity" required>
+                                                        <option value="">Select Activity of Enterprise</option>
+                                                        <option value="Manufacturer">Manufacturer</option>
+                                                        <option value="Service provider">Service provider</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" class="form-check-input ml-3" id="tems_and_cond_checkbox" name="tems_and_cond_checkbox" required />
+                                                    <label class="ml-5" for="tems_and_cond_checkbox">I agree to Terms & Condition</label>
+                                                </div>
 
-                                <small id="emailHelp" class="form-text text-muted m-4">We'll never share your details with anyone else.</small>
+                                                <small id="emailHelp" class="form-text text-muted m-4">We'll never share your details with anyone else.</small>
 
-                                <button type="submit" style="display: flex; justify-content: center; margin:auto" class="btn  btn-danger">
-                                    Pay and Register
-                                </button>
-                            </form>
+                                                <button type="submit" style="display: flex; justify-content: center; margin:auto" class="btn  btn-danger">
+                                                    Pay and Register
+                                                </button>
+                                            </form>
+                            </div>
+
+
+
                         </div>
                         <!-- The instruction coloumn -->
                         <div class="col-sm">

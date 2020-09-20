@@ -2,9 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const User = require("./model/user")
+//const nodemailer = require("nodemailer")
 const cors = require("cors");
-const ejs = require("ejs");
+//const expressValidator = require("express-validator")
 const app = express();
+// const transporter = require("./paytm/services/msg")
 require("dotenv").config();
 
 const PORT = process.env.PORT || 4000;
@@ -19,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/views"));
 app.use("/assets", express.static(__dirname + "/assets"));
 app.set("view engine", "ejs");
+const urlencodedPersor = bodyParser.urlencoded({ extended: false })
 
 //connect to the database
 mongoose.connect(conString, { useNewUrlParser: true }, () => {
@@ -29,7 +32,8 @@ mongoose.connect(conString, { useNewUrlParser: true }, () => {
 
 //the routes go here
 app.get("/", (req, res) => {
-    res.render("index");
+    var err = null;
+    res.render("index", { errmsg: err });
 })
 
 
@@ -50,33 +54,24 @@ app.get("/privacypolicy", (req, res) => {
 
 app.post("/register", (req, res) => {
 
-    const user = new User(req.body);
-    console.log(user)
-    console.log("we are here ");
-
-    //save the user
+    //lets save the user first
+    const user = new User(req.body)
     user.save((err, user) => {
         if (err) {
             console.log(err);
-            return res.status(400).json({ msg: "Unable to save the  user" })
+            res.render("index", { errmsg: err })
         }
         else {
             console.log("the user was saved");
             res.redirect("/paywithpaytm")
         }
-
     })
 })
 
 
 
 
-
 app.get("/paywithpaytm", (req, res) => {
-
-
-
-
     //initialize the payment
     initPayment().then(
         success => {
@@ -101,6 +96,7 @@ app.post("/paywithpaytmresponse", (req, res) => {
         }
     );
 });
+
 
 app.listen(PORT, () => {
     console.log("Running on " + PORT);
